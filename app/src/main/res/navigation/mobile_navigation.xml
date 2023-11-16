@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_productos">
+
+    <fragment
+        android:id="@+id/nav_productos"
+        android:name="com.example.happypetapp.ui.producto.ProductoFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_producto" />
+
+    <fragment
+        android:id="@+id/nav_mascota"
+        android:name="com.example.happypetapp.ui.mascota.MascotaFragment"
+        android:label="@string/menu_mascota"
+        tools:layout="@layout/fragment_mascota" >
+        <action
+            android:id="@+id/action_nav_mascota_to_altaMascotaFragment"
+            app:destination="@id/altaMascotaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/altaMascotaFragment"
+        android:name="com.example.happypetapp.ui.mascota.AltaMascotaFragment"
+        android:label="fragment_alta_mascota"
+        tools:layout="@layout/fragment_alta_mascota" >
+        <action
+            android:id="@+id/action_altaMascotaFragment_to_nav_mascota"
+            app:destination="@id/nav_mascota" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarMascotaFragment"
+        android:name="com.example.happypetapp.ui.mascota.ModificarMascotaFragment"
+        android:label="fragment_modificar_mascota"
+        tools:layout="@layout/fragment_modificar_mascota" >
+        <action
+            android:id="@+id/action_modificarMascotaFragment_to_nav_mascota"
+            app:destination="@id/nav_mascota" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_usuario"
+        android:name="com.example.happypetapp.ui.usuario.UsuarioFragment"
+        android:label="fragment_usuario"
+        tools:layout="@layout/fragment_usuario" />
+    <fragment
+        android:id="@+id/nav_cita"
+        android:name="com.example.happypetapp.ui.cita.CitaFragment"
+        android:label="fragment_cita"
+        tools:layout="@layout/fragment_cita" >
+        <action
+            android:id="@+id/action_nav_cita_to_modificacionCitasFragment"
+            app:destination="@id/modificacionCitasFragment" />
+        <action
+            android:id="@+id/action_nav_cita_to_altaCitaFragment"
+            app:destination="@id/altaCitaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/altaCitaFragment"
+        android:name="com.example.happypetapp.ui.cita.AltaCitaFragment"
+        android:label="fragment_alta_cita"
+        tools:layout="@layout/fragment_alta_cita" >
+        <action
+            android:id="@+id/action_altaCitaFragment_to_nav_cita"
+            app:destination="@id/nav_cita" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificacionCitasFragment"
+        android:name="com.example.happypetapp.ui.cita.modificacionCita.ModificacionCitasFragment"
+        android:label="fragment_modificacion_citas"
+        tools:layout="@layout/fragment_modificacion_citas" >
+        <action
+            android:id="@+id/action_modificacionCitasFragment_to_nav_cita2"
+            app:destination="@id/nav_cita" />
+    </fragment>
+</navigation>
